@@ -8,11 +8,11 @@
 
 name: Java CI with Maven
 
-on:
-  push:
-    branches: [ "testworkflow" ]
-  pull_request:
-    branches: [ "oldmaster" ]
+on: workflow_dispatch
+  # push:
+  #   branches: [ "testworkflow" ]
+  # pull_request:
+  #   branches: [ "oldmaster" ]
 
 jobs:
   build:
