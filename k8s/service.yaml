@@ -17,7 +17,7 @@ spec:
         app: web
     spec:
       containers:
-       —name: testjava
-          image: image-registry.openshift-image-registry.svc:5000/sagethram-dev/new-pipeline-9j9vr3:latest
-          ports:
-           —containerPort: 80
+      - name: testjava
+        image: image-registry.openshift-image-registry.svc:5000/sagethram-dev/new-pipeline-9j9vr3:latest
+        ports:
+        - containerPort: 8080
