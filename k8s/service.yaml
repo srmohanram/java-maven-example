@@ -1,11 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: testjava
-  namespace: sagethram-dev
+  name: testjava-deployment
+  labels:
+    app: web
 spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 1
+  strategy:
+    type: RollingUpdate
   template:
+    metadata:
+      labels:
+        app: web
     spec:
       containers:
-      - name: dapo-reference-cd-pipeline    
-        image: image-registry.openshift-image-registry.svc:5000/sagethram-dev/new-pipeline-9j9vr3:latest
+       —name: testjava
+          image: image-registry.openshift-image-registry.svc:5000/sagethram-dev/new-pipeline-9j9vr3:latest
+          ports:
+           —containerPort: 80
