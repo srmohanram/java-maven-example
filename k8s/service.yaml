@@ -1,12 +1,11 @@
-apiVersion: serving.knative.dev/v1alpha1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: testjava
-  namespace: default
+  namespace: sagethram-dev
 spec:
-  runLatest:
-    configuration:
-      revisionTemplate:
-        spec:
-          container:
-            image: image-registry.openshift-image-registry.svc:5000/sagethram-dev/new-pipeline-9j9vr3:latest
+  template:
+    spec:
+      containers:
+      - name: dapo-reference-cd-pipeline    
+        image: image-registry.openshift-image-registry.svc:5000/sagethram-dev/new-pipeline-9j9vr3:latest
