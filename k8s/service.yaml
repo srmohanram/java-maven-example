@@ -9,4 +9,4 @@ spec:
       revisionTemplate:
         spec:
           container:
-            image: __IMAGE__
+            image: image-registry.openshift-image-registry.svc:5000/sagethram-dev/new-pipeline-9j9vr3:latest
